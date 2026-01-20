@@ -8,66 +8,109 @@
 body {
   background: #0b0f1a;
   color: white;
+  overflow-x: hidden;
 }
 
-nav {
+/* NAV */
+.nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
-  background: #0e1224;
+  background: rgba(10, 12, 30, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
-nav a {
-  color: #b3b8ff;
+.nav a {
+  color: #c7cbff;
   margin-left: 20px;
   text-decoration: none;
 }
 
+/* HERO */
 .hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #7c6cff, #0b0f1a);
+}
+
+.hero-content {
   text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(135deg, #6a5cff, #8b5cf6);
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 64px;
 }
 
 .hero p {
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .btn {
-  display: inline-block;
-  padding: 14px 36px;
+  padding: 14px 40px;
   background: black;
-  border-radius: 30px;
+  border-radius: 40px;
   color: white;
   text-decoration: none;
 }
 
-section {
-  padding: 80px 20px;
+/* SECTIONS */
+.section {
+  padding: 120px 20px;
   text-align: center;
+}
+
+.section.dark {
+  background: #0f1433;
 }
 
 .cards {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 50px;
   flex-wrap: wrap;
 }
 
-.card {
-  background: #13183a;
+.card, .rank {
+  background: #161c4f;
   padding: 30px;
-  border-radius: 16px;
+  border-radius: 18px;
   width: 220px;
+  transition: transform 0.3s ease;
 }
 
+.card:hover, .rank:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Glow */
+.glow {
+  box-shadow: 0 0 30px rgba(140, 120, 255, 0.5);
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   opacity: 0.6;
 }
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay { transition-delay: 0.2s; }
+.delay2 { transition-delay: 0.4s; }
